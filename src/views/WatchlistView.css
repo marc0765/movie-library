@@ -1,0 +1,91 @@
+/* Page container */
+.watchlist-page {
+  background-color: #111; /* dark Netflix-style background */
+  min-height: 100vh;
+  padding-top: 140px; /* space for fixed header */
+  padding-bottom: 40px;
+}
+
+/* Inner container */
+.watchlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Title container: keeps the text centered */
+.watchlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center; /* center the inline-block title */
+}
+
+/* Title */
+.watchlist-title {
+  font-family: 'Bebas Neue', cursive; /* stylish cinematic font */
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e50914; /* Netflix red */
+  display: inline-block; /* shrink width to text only */
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Animated underline effect */
+.watchlist-title::after {
+  content: '';
+  display: block;
+  margin: 5px auto 0; /* spacing under text */
+  width: 0; /* initial width */
+  height: 4px;
+  background-color: #fff;
+  animation: slide-line 1.5s forwards;
+}
+
+/* Animate the underline width */
+@keyframes slide-line {
+  0% { width: 0; }
+  100% { width: 100%; } /* grows to match text width */
+}
+
+/* Empty watchlist message */
+.watchlist-empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .watchlist-title {
+    font-size: 2rem;
+  }
+
+  .watchlist-empty {
+    font-size: 1rem;
+    margin-top: 60px;
+  }
+}
+
+/* Empty watchlist message */
+.watchlist-empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .watchlist-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .watchlist-empty {
+    font-size: 1rem;
+    margin-top: 60px;
+  }
+}
