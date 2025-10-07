@@ -1,76 +1,73 @@
-# 🎬 CineFlix - Movie Library App
+# React + TypeScript + Vite
 
-![CineFlix Screenshot](./screenshot.png)  
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A responsive and interactive **movie library web application** built with **React**. Browse, search, and manage your personal watchlist with ease.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Features
-- Browse a curated list of movies.
-- Search movies by title with instant results.
-- Add or remove movies from your watchlist.
-- Responsive design for desktop and mobile.
-- Smooth UI with real-time updates.
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠 Technologies Used
-- **Frontend:** React, JavaScript, CSS
-- **State Management:** React Hooks, Context API
-- **Testing:** Jest, React Testing Library
-- **Persistence:** Local Storage
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## ⚙️ Setup & Installation
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/cineflix.git
-   cd cineflix
-Install dependencies:
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-npm install
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Start the development server:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-npm start
-
-
-Open in browser:
-Navigate to http://localhost:3000
-
-🧪 Running Tests
-
-Run all tests:
-
-npm test
-
-
-Run tests in watch mode:
-
-npm run test:watch
-
-💡 Assumptions & Design Choices
-
-Movie data is fetched from a static JSON file for simplicity.
-
-Local storage is used to store the watchlist.
-
-Designed for single-user interaction; no authentication yet.
-
-Functional components and React Hooks are used for state management.
-
-CSS files are used for styling with a focus on clean UI and smooth animations.
-
-🔮 Future Improvements
-
-Integrate with a real movie API (e.g., TMDB) for dynamic data.
-
-Add user authentication and personalized watchlists.
-
-Movie detail pages with ratings, trailers, and reviews.
-
-Implement advanced search features with debounce and caching.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
