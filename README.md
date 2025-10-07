@@ -1,8 +1,8 @@
-🎬 **CineFlix – Movie Library Application**
+🎬 **CineFlix – Movie Library Application**  <br>
 A sleek, responsive web application for discovering, searching, and managing your favorite movies.
 CineFlix allows users to browse movie details, add titles to their watchlist, and view curated collections — all in a modern, easy-to-use interface built with React.
 
-🚀 **Features**
+🚀 **Features** <br>
 🔍 Search Movies – Find movies by title using live search.
 ⭐ Watchlist Management – Add or remove movies to/from your personal watchlist.
 🎨 Responsive Design – Optimized for mobile, tablet, and desktop.
