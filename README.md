@@ -13,7 +13,7 @@ CineFlix allows users to browse movie details, add titles to their watchlist, an
 Frontend: React, JavaScript, CSS <br>
 Routing: React Router DOM <br>
 State Management: React Context API <br>
-API: (e.g., TMDB or custom movie dataset) <br>
+API: TMDB API <br>
 Build Tool: Vite / Create React App <br>
 
 💻 **Setup Instructions** <br>
