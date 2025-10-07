@@ -19,7 +19,7 @@ Build Tool: Vite / Create React App <br>
 💻 **Setup Instructions** <br>
 Follow these steps to set up and run the project locally: <br>
 1️⃣ Clone the Repository <br>
-git clone https://github.com/your-username/movie-library.git <br>
+git clone https://github.com/marc0765/movie-library.git <br>
 cd movie-library <br>
 
 2️⃣ Install Dependencies <br>
